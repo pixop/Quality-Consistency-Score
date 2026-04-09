@@ -4,12 +4,16 @@ This repository provides a minimal reference implementation of the **Quality Con
 
 ## Definition
 
-Let \(Q(t)\) be a time series of quality scores and let the survival curve be:
-- \(S(x) = P(Q \ge x)\) (probability scale), or
-- \(S_{\%}(x) = 100 \cdot P(Q \ge x)\) (percent scale).
+Let $Q(t)$ be a time series of quality scores and let the survival curve be:
 
-Then the Quality Consistency Score over an operating interval \([a,b]\) is:
-- \(\mathrm{QCS}_{[a,b]} = \frac{1}{b-a}\int_{a}^{b} S(x)\,dx\)
+- $S(x) = P(Q \ge x)$ (probability scale), or  
+- $S_{\%}(x) = 100 \cdot P(Q \ge x)$ (percent scale).
+
+Then the Quality Consistency Score over an operating interval $[a,b]$ is:
+
+$$
+\mathrm{QCS}_{[a,b]} = \frac{1}{b-a} \int_a^b S(x)\,dx
+$$
 
 `qcs.py` supports output in probability (`scale="prob"`, range [0,1]) or percent (`scale="percent"`, range [0,100]).
 
