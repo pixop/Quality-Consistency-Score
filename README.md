@@ -21,7 +21,7 @@ $$
 
 - `qcs.py` — QCS + survival curve + a few pooling baselines (mean, p10, worst-1%, Minkowski p=0.5)
 - `qcs_sample.ipynb` — demo notebook using the sample traces
-- `VMAF_scores/` — sample per-frame VMAF traces (two .txt files)
+- `VMAF_scores/` — sample per-frame VMAF traces
 
 ## Quickstart
 
