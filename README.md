@@ -7,7 +7,7 @@ This repository provides a minimal reference implementation of the **Quality Con
 Let $Q(t)$ be a time series of quality scores and let the survival curve be:
 
 - $S(x) = P(Q \ge x)$ (probability scale), or  
-- $S_{\%}(x) = 100 \cdot P(Q \ge x)$ (percent scale).
+- $S(x) = 100 \cdot P(Q \ge x)$ (percent scale).
 
 Then the Quality Consistency Score over an operating interval $[a,b]$ is:
 
