@@ -19,7 +19,7 @@ $$
 
 ## Repository contents
 
-- `qcs.py` — QCS + survival curve + a few pooling baselines (mean, p10, worst-1%, Minkowski p=0.5)
+- `qcs.py` — QCS + survival curve + a few pooling baselines (arithmetic mean, harmonic mean, Minkowski p=0.5, 10th-percentile pooling, worst-1%)
 - `qcs_sample.ipynb` — demo notebook using the sample traces
 - `VMAF_scores/` — sample per-frame VMAF traces
 
