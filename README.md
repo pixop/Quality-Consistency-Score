@@ -2,6 +2,8 @@
 
 This repository provides a minimal reference implementation of the **Quality Consistency Score (QCS)**, a post-processing temporal reliability descriptor computed from a per-frame (or per-second) quality signal (e.g., VMAF, PSNR, SSIM/MS-SSIM, or MOS-over-time).
 
+QCS measures how consistently a video codec maintains quality at or above meaningful thresholds over time, expressed as a fraction of viewing time. It complements conventional RD/BD-rate analysis by exposing temporary quality degradations that may be hidden by temporal averaging.
+
 ## Definition
 
 Let $Q(t)$ be a time series of quality scores and let the survival curve be:
