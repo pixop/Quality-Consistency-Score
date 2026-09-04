@@ -30,3 +30,70 @@ $$
 ### Requirements
 ```bash
 pip install numpy matplotlib
+```
+ 
+### Input format
+
+QCS can be computed from a plain-text file containing **one quality score per line**.
+
+For example, a per-frame VMAF trace should look like:
+
+```text
+96.333998
+100.000000
+99.710632
+98.776662
+...
+```
+
+Each line represents one sample in temporal order, typically one score per frame or per second.
+
+The sample files in `vmaf_scores/` follow this format.
+
+### 1. Run the provided notebook
+
+Open and execute:
+
+```text
+qcs_sample.ipynb
+```
+
+The notebook demonstrates how to load the sample quality traces, compute the survival curve and QCS, and compare QCS with conventional temporal pooling baselines.
+
+### 2. Use QCS in your own notebook or Python script
+
+```python
+from qcs import load_scores_txt, qcs
+
+# Load one quality score per line
+scores = load_scores_txt("vmaf_scores/BasketballGame_av1_20000.txt")
+
+# Compute QCS over the VMAF quality range [90, 100]
+score = qcs(scores, 90, 100, scale="percent")
+
+print(f"QCS[90,100] = {score:.2f}")
+```
+
+With `scale="percent"`, QCS is returned in the range `[0,100]`.
+
+To use probability scale instead:
+
+```python
+score = qcs(scores, 90, 100, scale="prob")
+```
+
+which returns a value in the range `[0,1]`.
+
+### 3. Command-line usage
+
+The command-line interface requires the CLI entry point to be added to `qcs.py`. Once included, QCS can be computed directly from a terminal:
+
+```bash
+python qcs.py vmaf_scores/BasketballGame_av1_20000.txt --range 90 100
+```
+
+To return QCS on a probability scale:
+
+```bash
+python qcs.py vmaf_scores/BasketballGame_av1_20000.txt --range 90 100 --scale prob
+```

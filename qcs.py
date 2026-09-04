@@ -391,3 +391,50 @@ def baselines(scores: np.ndarray) -> Dict[str, float]:
         "p10": percentile(q, 10),
         "worst_1pct_mean": worst_kpct_mean(q, 1.0),
     }
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Compute the Quality Consistency Score (QCS) from a quality trace."
+    )
+
+    parser.add_argument(
+        "input_file",
+        help="Text file containing one quality score per line."
+    )
+
+    parser.add_argument(
+        "--range",
+        nargs=2,
+        type=float,
+        metavar=("A", "B"),
+        required=True,
+        help="Quality interval [A, B] over which QCS is computed."
+    )
+
+    parser.add_argument(
+        "--scale",
+        choices=["prob", "percent"],
+        default="percent",
+        help="Output scale: probability [0,1] or percent [0,100]."
+    )
+
+    args = parser.parse_args()
+
+    scores = load_scores_txt(args.input_file)
+
+    a, b = args.range
+
+    value = qcs(
+        scores,
+        a,
+        b,
+        scale=args.scale
+    )
+
+    print(f"QCS[{a:g},{b:g}] = {value:.2f}")
+
+
+if __name__ == "__main__":
+    main()
