@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="qcs_1200x628.png" alt="Into Picture"/>
+  <img src="img/qcs_1200x628.png" alt="Featured image"/>
   <c>
 </div>
 
@@ -7,6 +7,8 @@
 # Quality Consistency Score (QCS)
 
 This repository provides a minimal reference implementation of the **Quality Consistency Score (QCS)**, a post-processing temporal reliability descriptor computed from a per-frame (or per-second) quality signal (e.g., VMAF, PSNR, SSIM/MS-SSIM, or MOS-over-time).
+
+📊 [View the ICIP 2026 presentation](presentation/2115_Sergio_Sanz-Rodriguez_QCS_ICIP2026.pdf)
 
 QCS measures how consistently a video codec maintains quality at or above meaningful thresholds over time, expressed as a fraction of viewing time. It complements conventional RD/BD-rate analysis by exposing temporary quality degradations that may be hidden by temporal averaging.
 
