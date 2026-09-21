@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="qcs_1200x628.png" alt="Into Picture"/>
+  <c>
+</div>
+
+&nbsp;
 # Quality Consistency Score (QCS)
 
 This repository provides a minimal reference implementation of the **Quality Consistency Score (QCS)**, a post-processing temporal reliability descriptor computed from a per-frame (or per-second) quality signal (e.g., VMAF, PSNR, SSIM/MS-SSIM, or MOS-over-time).
